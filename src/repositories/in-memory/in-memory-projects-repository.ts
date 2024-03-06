@@ -8,7 +8,6 @@ export class InMemoryProjectsRepository implements ProjectsRepository {
   async create(data: Prisma.ProjectCreateInput) {
     const newProject: Project = {
       id: randomUUID(),
-      // cover_image_url: data.cover_image_url,
       title: data.title,
       description: data.description,
       category: data.category,

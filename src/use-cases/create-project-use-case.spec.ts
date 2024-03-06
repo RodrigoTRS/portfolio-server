@@ -14,7 +14,6 @@ describe("Create project use case:", () => {
   it.skip("should be able to create a project", async () => {
     const { project } = await sut.execute({
       category: "cateogry-01",
-      cover_image = "image",
       title: "project-01",
       description: "description",
       technologies: ["tag-01"],

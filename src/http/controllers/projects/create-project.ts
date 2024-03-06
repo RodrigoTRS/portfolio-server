@@ -5,7 +5,6 @@ import { z } from "zod";
 export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createProjectBodySchema = z.object({
     category: z.string(),
-    cover_image: z.instanceof(File),
     title: z.string(),
     description: z.string(),
     technologies: z.array(z.string()),
@@ -15,7 +14,6 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 
   const {
     category,
-    cover_image,
     title,
     description,
     technologies,
@@ -27,7 +25,6 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 
   useCase.execute({
     category,
-    cover_image,
     title,
     description,
     technologies,
