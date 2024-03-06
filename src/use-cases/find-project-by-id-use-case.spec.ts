@@ -14,7 +14,6 @@ describe("Find by id use case:", () => {
   it("should be able to get a project by its id", async () => {
     const newProject = await projectRepository.create({
       category: "cateogry-01",
-      cover_image_url: "http://image.url",
       title: "project-01",
       description: "description",
       technologies: ["tag-01"],

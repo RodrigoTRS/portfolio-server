@@ -21,4 +21,9 @@ export class PrismaProjectsRepository implements ProjectsRepository {
 
     return project;
   }
+
+  async fetchProjects() {
+    const projects = await prisma.project.findMany();
+    return projects;
+  }
 }

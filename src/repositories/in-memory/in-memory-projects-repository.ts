@@ -31,4 +31,8 @@ export class InMemoryProjectsRepository implements ProjectsRepository {
 
     return project;
   }
+
+  async fetchProjects() {
+    return this.items;
+  }
 }

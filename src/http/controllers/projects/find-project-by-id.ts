@@ -11,7 +11,7 @@ export async function findById(request: FastifyRequest, reply: FastifyReply) {
 
   const useCase = makeFindProjectByIdUseCase();
 
-  const project = useCase.execute({
+  const project = await useCase.execute({
     id,
   });
 
