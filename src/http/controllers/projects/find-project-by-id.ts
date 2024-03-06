@@ -15,7 +15,5 @@ export async function findById(request: FastifyRequest, reply: FastifyReply) {
     id,
   });
 
-  return reply.status(200).send({
-    project,
-  });
+  return reply.status(200).send(project);
 }
