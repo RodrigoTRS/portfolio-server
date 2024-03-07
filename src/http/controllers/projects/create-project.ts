@@ -1,4 +1,4 @@
-import { makeCreateProjectUseCase } from "@/use-cases/factories/make-create-project-use-case";
+import { makeCreateProjectUseCase } from "@/use-cases/projects/factories/make-create-project-use-case";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

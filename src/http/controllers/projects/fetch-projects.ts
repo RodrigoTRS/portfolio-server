@@ -1,4 +1,4 @@
-import { makeFetchProjectsUseCase } from "@/use-cases/factories/make-fetch-projects-use-cast";
+import { makeFetchProjectsUseCase } from "@/use-cases/projects/factories/make-fetch-projects-use-cast";
 import { FastifyReply, FastifyRequest } from "fastify";
 
 export async function fetchProjects(

@@ -1,6 +1,6 @@
 import { ProjectsRepository } from "@/repositories/projects-repository";
 import { Project } from "@prisma/client";
-import { ResourceNotFoundError } from "./errors/resource-not-found-error";
+import { ResourceNotFoundError } from "../errors/resource-not-found-error";
 
 interface FindProjectByIdUseCaseRequest {
   id: string;

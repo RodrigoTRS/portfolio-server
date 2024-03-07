@@ -1,24 +1,28 @@
 import { describe, it, beforeEach, expect } from "vitest";
-import { CreateProjectUseCase } from "./create-project-use-case";
 import { InMemoryProjectsRepository } from "@/repositories/in-memory/in-memory-projects-repository";
+import { FindProjectByIdUseCase } from "./find-project-by-id-use-case";
 
 let projectRepository: InMemoryProjectsRepository;
-let sut: CreateProjectUseCase;
+let sut: FindProjectByIdUseCase;
 
-describe("Create project use case:", () => {
+describe("Find by id use case:", () => {
   beforeEach(() => {
     projectRepository = new InMemoryProjectsRepository();
-    sut = new CreateProjectUseCase(projectRepository);
+    sut = new FindProjectByIdUseCase(projectRepository);
   });
 
-  it("should be able to create a project", async () => {
-    const { project } = await sut.execute({
-      category: "cateogry-01",
+  it("should be able to get a project by its id", async () => {
+    const newProject = await projectRepository.create({
+      category: "category-01",
       title: "project-01",
       description: "description",
       technologies: ["tag-01"],
       project_url: "http://localhost:3333",
       repository_url: "http://localhost:3333",
+    });
+
+    const { project } = await sut.execute({
+      id: newProject.id,
     });
 
     expect(project).toEqual(

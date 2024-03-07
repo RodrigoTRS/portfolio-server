@@ -17,3 +17,9 @@ model Project {
   repository_url String
   project_url    String
 }
+
+model Language {
+  id    String @id @default(uuid())
+  title String
+  level String
+}

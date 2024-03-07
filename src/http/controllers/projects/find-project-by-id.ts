@@ -1,4 +1,4 @@
-import { makeFindProjectByIdUseCase } from "@/use-cases/factories/make-find-project-by-id-use-case";
+import { makeFindProjectByIdUseCase } from "@/use-cases/projects/factories/make-find-project-by-id-use-case";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 

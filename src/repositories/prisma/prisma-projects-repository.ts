@@ -1,7 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { ProjectsRepository } from "../projects-repository";
 import { prisma } from "@/lib/prisma";
-import { ResourceNotFoundError } from "@/use-cases/errors/resource-not-found-error";
 
 export class PrismaProjectsRepository implements ProjectsRepository {
   async create(data: Prisma.ProjectCreateInput) {
@@ -25,5 +24,15 @@ export class PrismaProjectsRepository implements ProjectsRepository {
   async fetchProjects() {
     const projects = await prisma.project.findMany();
     return projects;
+  }
+
+  async deleteById(id: string) {
+    const project = await prisma.project.delete({
+      where: {
+        id,
+      },
+    });
+
+    return project;
   }
 }

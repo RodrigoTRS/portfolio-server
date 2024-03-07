@@ -13,7 +13,7 @@ describe("Create project use case:", () => {
 
   it("should be able to create a project", async () => {
     await projectRepository.create({
-      category: "cateogry-01",
+      category: "category-01",
       title: "project-01",
       description: "description",
       technologies: ["tag-01"],
@@ -22,7 +22,7 @@ describe("Create project use case:", () => {
     });
 
     await projectRepository.create({
-      category: "cateogry-02",
+      category: "category-02",
       title: "project-02",
       description: "description",
       technologies: ["tag-01"],
